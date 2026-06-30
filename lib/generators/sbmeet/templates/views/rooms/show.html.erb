@@ -1,0 +1,73 @@
+<style>
+  .hover-opacity-100:hover { opacity: 1 !important; }
+</style>
+
+<div class="container my-5"
+  data-controller="room"
+  data-room-id-value="<%= @room.id %>"
+  data-room-current-user-id-value="<%= current_user.id %>"
+  data-room-current-user-name-value="<%= current_user.email.split('@').first.capitalize %>">    
+  
+  <div class="d-flex justify-content-between align-items-center mb-4">        
+    <div><h1 class="h2 mb-1">Room: <%= @room.name %></h1></div>
+    <%= link_to 'Leave Room', rooms_path, class: 'btn btn-outline-danger fw-medium' %>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-12 col-md-9">
+      <div class="row g-3">
+        
+        <%# Local Video Frame %>
+        <div class="col-12 col-md-6" id="local-video-container">
+          <div class="card bg-dark border-0 shadow overflow-hidden">
+            <div class="position-relative d-flex flex-column bg-black">
+              <div class="d-flex position-relative">
+                <div class="ratio ratio-16x9 bg-black flex-grow-1">
+                  <video data-room-target="localVideo" autoplay playsinline muted class="w-100 h-100 object-fit-cover"></video>
+                </div>
+                <div class="bg-black border-start border-secondary p-1 d-flex align-items-end" style="width: 14px;">
+                  <div id="local-audio-level" class="w-100 bg-success rounded-top" style="height: 0%; min-height: 2px; transition: height 0.05s ease;"></div>
+                </div>
+                <span class="position-absolute bottom-0 start-0 m-3 badge bg-secondary opacity-75 z-3">
+                  You (<%= current_user.email.split('@').first.capitalize %>)
+                </span>
+                <button data-action="click->room#toggleLocalFullscreen" class="btn btn-sm btn-light position-absolute top-0 end-0 m-2 opacity-50 hover-opacity-100 z-3" title="Toggle Fullscreen">⛶</button>
+              </div>
+              
+              <%# LOCAL LIVE STATS FOOTER %>
+              <div class="bg-dark text-white p-2 small font-monospace d-flex justify-content-between border-top border-secondary" style="font-size: 0.75rem;">
+                <div>🚀 Emitting: <span id="local-emit-rate">0.00</span> Mbps</div>
+                <div class="text-success">● Local Camera</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+        <%# Remote Video Container %>
+        <div class="col-12 col-md-6">
+          <div id="remote-videos" data-room-target="remoteContainer" class="row g-3"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <%# Sidebar: Active Users %>
+    <div class="col-12 col-md-3">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-header bg-white border-0 pt-3">
+          <h5 class="card-title fw-bold text-secondary mb-0">Active Users</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush small" id="participant-list">
+            <li class="list-group-item d-flex align-items-center text-success fw-semibold" id="list-item-local">
+              <span class="p-1 bg-success border border-light rounded-circle me-2"></span>
+              <%= current_user.email.split('@').first.capitalize %> (You)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+
+test:
+  adapter: test
+
+production:
+  adapter: postgresql
+  channel_prefix: sbmeet_production
