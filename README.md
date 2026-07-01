@@ -9,6 +9,8 @@ It support 4/5g to wifi switch , page refresh and ios fullscreen and it comes wi
 Minimal implementation , with maximum performance .(Work on basic dyno of heroku)  
 
 
+![demo-video](sbmeet.gif)
+
 ## Prerequisites
 * **Devise** (Used to ensure room administration as well as reconection or participant maxing)
 * **PostgreSQL** (Used natively for both ActiveRecord and ActionCable signaling)
