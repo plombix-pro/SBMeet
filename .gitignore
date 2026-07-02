@@ -1,0 +1,101 @@
+# Ruby on Rails
+*.rbc
+capybara-*.html
+.rspec
+/db/*.sqlite3
+/db/*.sqlite3-wal
+/db/*.sqlite3-journal
+/db/*.sqlite3-[0-9]*
+/public/system
+/coverage/
+/spec/tmp
+*.orig
+rerun.txt
+pickle-email-*.html
+
+# If you have local env variables committed to version control, this is bad and you should delete this file.
+.env
+.env.local
+.env.*.local
+
+# Ruby
+*.gem
+*.rbc
+/.config
+/InstalledFiles
+/pkg/
+/rdoc/
+/test/tmp/
+/test/vendor/
+/tmp/
+*.o
+*.c.so
+*.su
+*.gch
+*.pic.o
+.basho-vagrant
+/vendor/bundle
+
+# Node/JavaScript
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Node dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Bundler lock files (if using JavaScript dependencies)
+Gemfile.lock
+
+# Build outputs
+/dist
+/build
+*.tsbuildinfo
+
+# Cache directories
+.cache
+.eslintcache
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.AppleDouble
+.LSOverride
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+*.c9/
+*.iml
+*.map
+
+# OS files
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Rails
+/bin/bundle
+/log/*
+!/log/.keep
+/tmp/*
+!/tmp/.keep
+/tmp/pids/*
+!/tmp/pids/.keep
+
+# Yarn
+yarn.lock
+
+# Optional gem version lock files
+Gemfile.lock
